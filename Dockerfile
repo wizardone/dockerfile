@@ -4,6 +4,12 @@ RUN apt-get update && apt-get install -qq -y build-essential nodejs libpq-dev po
 
 WORKDIR app/
 
-ADD . add/
+COPY Gemfile /app/Gemfile
+
+COPY . /app/
 
 RUN bundle install
+
+EXPOSE 3000
+
+RUN bundle exec rails s
