@@ -10,6 +10,3 @@ RUN bundle install
 COPY . $APP_HOME
 
 EXPOSE 3000
-
-#CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
-RUN rails server -b 0.0.0.0
